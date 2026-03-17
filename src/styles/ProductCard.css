@@ -1,0 +1,34 @@
+.card{
+
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+
+}
+
+.card img{
+
+width:100%;
+height:200px;
+object-fit:cover;
+
+}
+
+.card:hover{
+
+transform:scale(1.03);
+
+}
+
+.card button{
+
+margin-top:10px;
+padding:10px;
+background:#00c3ff;
+border:none;
+color:white;
+cursor:pointer;
+
+}
