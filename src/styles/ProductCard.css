@@ -4,7 +4,7 @@ padding:20px;
 border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 text-align:center;
-transition:0.3s;
+transition:0.3s ease;
 
 }
 
@@ -19,6 +19,8 @@ object-fit:cover;
 .card:hover{
 
 transform:scale(1.03);
+
+transform:translateY(-10px) scale(1.02);
 
 }
 

@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import WhatsappButton from "./components/WhatsappButton"
 
+import ProductDetail from "./pages/ProductDetail"
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import Cart from "./pages/Cart"
@@ -25,6 +26,7 @@ return(
 <Route path="/" element={<Home/>}/>
 <Route path="/productos" element={<Products/>}/>
 <Route path="/carrito" element={<Cart/>}/>
+<Route path="/producto/:id" element={<ProductDetail/>}/>
 
 </Routes>
 
