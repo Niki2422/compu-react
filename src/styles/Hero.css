@@ -1,0 +1,24 @@
+.hero{
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#1e293b,#0f172a);
+color:white;
+}
+
+.hero button{
+margin-top:20px;
+padding:12px 24px;
+background:#38bdf8;
+border:none;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+background:#0ea5e9;
+}
