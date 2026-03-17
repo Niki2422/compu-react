@@ -1,0 +1,14 @@
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:12px;
+border-radius:50%;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+.whatsapp img{
+width:30px;
+height:30px;
+}
