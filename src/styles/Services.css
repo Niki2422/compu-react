@@ -1,0 +1,27 @@
+.services{
+padding:60px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+padding:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:10px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+@media(max-width:768px){
+.grid{
+grid-template-columns:1fr;
+}
+}
