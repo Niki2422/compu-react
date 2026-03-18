@@ -3,6 +3,7 @@ import products from "../data/products"
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import ProductCard from "../components/ProductCard"
+import "../index.css"
 import "../styles/ProductDetail.css"
 
 export default function ProductDetail(){

@@ -25,6 +25,11 @@ return(
 <p>Asistencia personalizada</p>
 </div>
 
+<div className="card">
+<h3>Mejores Precios</h3>
+<p>Equipos directos de fabrica</p>
+</div>
+
 </div>
 
 </section>

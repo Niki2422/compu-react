@@ -2,6 +2,7 @@ import Hero from "../components/Hero"
 import Services from "../components/Services"
 import products from "../data/products"
 import ProductCard from "../components/ProductCard"
+import "../index.css"
 
 const offers = products.filter(p=>p.offer)
 

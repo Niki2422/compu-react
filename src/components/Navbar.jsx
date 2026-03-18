@@ -1,16 +1,27 @@
 import "../styles/Navbar.css"
 import { Link } from "react-router-dom"
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { CartContext } from "../context/CartContext"
 
 export default function Navbar(){
 
 const {cart} = useContext(CartContext)
 const [menuOpen, setMenuOpen] = useState(false)
+const [scrolled, setScrolled] = useState(false)
+
+// efecto scroll
+useEffect(()=>{
+  const handleScroll = ()=>{
+    setScrolled(window.scrollY > 50)
+  }
+
+  window.addEventListener("scroll", handleScroll)
+  return ()=> window.removeEventListener("scroll", handleScroll)
+},[])
 
 return(
 
-<nav className="navbar">
+<nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
 
 <h2 className="logo">CompuReact</h2>
 
@@ -22,8 +33,13 @@ return(
 
 </ul>
 
-<div className="hamburger" onClick={()=>setMenuOpen(!menuOpen)}>
-  ☰
+<div 
+className={`hamburger ${menuOpen ? "open" : ""}`} 
+onClick={()=>setMenuOpen(!menuOpen)}
+>
+<span></span>
+<span></span>
+<span></span>
 </div>
 
 </nav>
