@@ -18,6 +18,7 @@ font-size:24px;
 display:flex;
 gap:20px;
 list-style:none;
+transition: all 0.3s ease;
 }
 
 .navbar a{
@@ -29,8 +30,41 @@ text-decoration:none;
 color:#38bdf8;
 }
 
-@media(max-width:768px){
-.navbar{
-flex-direction:column;
+/* HAMBURGUESA OCULTA EN DESKTOP */
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+
+.navbar{
+flex-direction:row; /* 👈 importante */
+}
+
+/* menú oculto */
+.navbar ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0f172a;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
+}
+
+/* cuando se abre */
+.navbar ul.active{
+display:flex;
+}
+
+/* botón hamburguesa visible */
+.hamburger{
+display:block;
+}
+
 }

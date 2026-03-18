@@ -1,13 +1,31 @@
 .hero{
-height:70vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#1e293b,#0f172a);
-color:white;
+  height: 70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  background-image: url("/imagen-Hero.png"); /* 👈 importante */
+  background-size: contain;        /* 🔥 clave */
+  background-color: black;
+  background-position: center;   /* 🔥 centra la imagen */
+  background-repeat: no-repeat;
+
+  color:white;
+  position: relative;
 }
+
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+}
+
 
 .hero button{
 margin-top:20px;
@@ -16,6 +34,8 @@ background:#38bdf8;
 border:none;
 color:white;
 cursor:pointer;
+position:relative;
+z-index:2;
 transition:0.3s;
 }
 

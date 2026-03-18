@@ -1,6 +1,7 @@
 import products from "../data/products"
 import ProductCard from "../components/ProductCard"
 import "../index.css"
+import "../styles/Products.css"
 import { useState } from "react"
 
 export default function Products(){
