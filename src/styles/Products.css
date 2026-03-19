@@ -1,0 +1,23 @@
+.products{
+  padding:40px 20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:20px;
+}
+
+/* tablet */
+@media(max-width:1024px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media(max-width:768px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}

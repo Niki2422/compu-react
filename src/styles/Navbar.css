@@ -1,36 +1,110 @@
+/* NAVBAR BASE */
 .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#0f172a;
-color:white;
+padding:20px 40px;
 position:sticky;
 top:0;
-z-index:100;
+z-index:1000;
+
+/* efecto transparente */
+background: rgba(15, 23, 42, 0.4);
+backdrop-filter: blur(10px);
+transition: all 0.3s ease;
 }
 
+/* cuando haces scroll */
+.navbar.scrolled{
+background: rgba(15, 23, 42, 0.9);
+box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* LOGO */
 .logo{
 font-size:24px;
+font-weight:600;
 }
 
+/* LINKS */
 .navbar ul{
 display:flex;
-gap:20px;
+gap:30px;
 list-style:none;
 }
 
 .navbar a{
 color:white;
 text-decoration:none;
+font-weight:500;
+transition:0.3s;
 }
 
 .navbar a:hover{
 color:#38bdf8;
 }
 
-@media(max-width:768px){
-.navbar{
+/* HAMBURGUESA */
+.hamburger{
+display:none;
 flex-direction:column;
+cursor:pointer;
+gap:5px;
 }
+
+.hamburger span{
+width:25px;
+height:3px;
+background:white;
+transition:0.3s;
+}
+
+/* ANIMACIÓN A X */
+.hamburger.open span:nth-child(1){
+transform: rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.open span:nth-child(2){
+opacity:0;
+}
+
+.hamburger.open span:nth-child(3){
+transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.navbar{
+padding:20px;
+}
+
+/* MENÚ OCULTO */
+.navbar ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background: rgba(15, 23, 42, 0.95);
+backdrop-filter: blur(10px);
+flex-direction:column;
+align-items:center;
+
+/* ANIMACIÓN */
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+}
+
+/* CUANDO ABRE */
+.navbar ul.active{
+max-height:300px;
+padding:20px 0;
+}
+
+/* BOTÓN */
+.hamburger{
+display:flex;
+}
+
 }

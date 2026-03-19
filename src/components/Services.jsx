@@ -1,4 +1,4 @@
-import "./Services.css"
+import "../styles/Services.css"
 
 export default function Services(){
 
@@ -23,6 +23,11 @@ return(
 <div className="card">
 <h3>Soporte</h3>
 <p>Asistencia personalizada</p>
+</div>
+
+<div className="card">
+<h3>Mejores Precios</h3>
+<p>Equipos directos de fabrica</p>
 </div>
 
 </div>

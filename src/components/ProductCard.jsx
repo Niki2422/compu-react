@@ -1,6 +1,7 @@
-import "./ProductCard.css"
+import "../styles/ProductCard.css"
 import { useContext } from "react"
-import { CartContext } from "../../context/CartContext"
+import { CartContext } from "../context/CartContext"
+import { Link } from "react-router-dom"
 
 export default function ProductCard({product}){
 
@@ -10,7 +11,9 @@ return(
 
 <div className="card">
 
-<img src={product.image} />
+<Link to={`/producto/${product.id}`}>
+<img src={product.image}/>
+</Link>
 
 <h3>{product.name}</h3>
 
