@@ -1,42 +1,44 @@
-import products from "../data/products"
-import ProductCard from "../components/ProductCard"
-import "../index.css"
-import "../styles/Products.css"
-import { useState } from "react"
+import { useState, useEffect } from "react";
+import { api } from "../api/api";
+import ProductCard from "../components/ProductCard";
+import "../index.css";
+import "../styles/Products.css";
 
-export default function Products(){
+export default function Products() {
+  const [products, setProducts] = useState([]); // 👈 antes venía del import
+  const [search, setSearch] = useState("");
 
-const [search,setSearch] = useState("")
+  // 🔥 traer productos del backend
+  useEffect(() => {
+    api.get("/products")
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
-// filtramos productos
-const filteredProducts = products.filter(p =>
-p.name.toLowerCase().includes(search.toLowerCase())
-)
+  // 🔎 filtro sigue funcionando igual
+  const filteredProducts = products.filter((p) =>
+    p.name.toLowerCase().includes(search.toLowerCase())
+  );
 
-return(
+  return (
+    <div className="products">
+      <h1>Computadoras</h1>
 
-<div className="products">
+      <input
+        type="text"
+        placeholder="Buscar producto..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search"
+      />
 
-<h1>Computadoras</h1>
-
-<input
-type="text"
-placeholder="Buscar producto..."
-value={search}
-onChange={(e)=>setSearch(e.target.value)}
-className="search"
-/>
-
-<div className="grid">
-
-{filteredProducts.map(p=>(
-<ProductCard key={p.id} product={p}/>
-))}
-
-</div>
-
-</div>
-
-)
-
+      <div className="grid">
+        {filteredProducts.map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+      </div>
+    </div>
+  );
 }

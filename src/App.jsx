@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail"
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import Cart from "./pages/Cart"
+import Login from "./pages/Login";
 
 import {CartProvider} from "./context/CartContext"
 
@@ -27,6 +28,7 @@ return(
 <Route path="/productos" element={<Products/>}/>
 <Route path="/carrito" element={<Cart/>}/>
 <Route path="/producto/:id" element={<ProductDetail/>}/>
+<Route path="/login" element={<Login />} />
 
 </Routes>
 
