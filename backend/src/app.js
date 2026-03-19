@@ -8,13 +8,16 @@ import orderRoutes from "./routes/order.routes.js";
 
 dotenv.config();
 
-const app = express(); // ✅ PRIMERO se crea
+const app = express();
 
 // middlewares
 app.use(cors());
 app.use(express.json());
 
-// rutas (DESPUÉS de crear app)
+// 🔥 SERVIR IMÁGENES (IMPORTANTE)
+app.use("/images", express.static("public/images"));
+
+// rutas
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);

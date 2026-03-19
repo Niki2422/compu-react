@@ -12,7 +12,10 @@ return(
 <div className="card">
 
 <Link to={`/producto/${product.id}`}>
-<img src={product.image}/>
+<img
+  src={`http://localhost:3000/images/${product.image}`}
+  alt={product.name}
+/>
 </Link>
 
 <h3>{product.name}</h3>

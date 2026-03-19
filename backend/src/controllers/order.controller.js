@@ -1,6 +1,7 @@
 import { pool } from "../config/db.js";
 
 export const createOrder = async (req, res) => {
+    console.log("USER DEL TOKEN:", req.user);
   const userId = req.user.id;
   const { items } = req.body;
 

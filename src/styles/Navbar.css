@@ -44,6 +44,21 @@ transition:0.3s;
 color:#38bdf8;
 }
 
+/* botón logout */
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  color: #00d8ff;
+}
+
+
 /* HAMBURGUESA */
 .hamburger{
 display:none;
