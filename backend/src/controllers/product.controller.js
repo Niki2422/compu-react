@@ -31,7 +31,9 @@ export const getProduct = async (req, res) => {
 
 export const createNewProduct = async (req, res) => {
   try {
-    const { name, price, description, stock, image, category_id } = req.body;
+    const { name, price, description, stock, category_id } = req.body;
+
+    const image = req.file ? req.file.filename : null;
 
     if (!name || !price) {
       return res.status(400).json({ message: "Faltan datos obligatorios" });

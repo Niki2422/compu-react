@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 
 import authRoutes from "./routes/auth.routes.js";
 import productRoutes from "./routes/product.routes.js";
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 // 🔥 SERVIR IMÁGENES (IMPORTANTE)
-app.use("/images", express.static("public/images"));
+app.use("/uploads", express.static("uploads"));
 
 // rutas
 app.use("/api/auth", authRoutes);

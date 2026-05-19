@@ -9,6 +9,7 @@ import Home from "./pages/Home"
 import Products from "./pages/Products"
 import Cart from "./pages/Cart"
 import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 import {CartProvider} from "./context/CartContext"
 
@@ -34,7 +35,7 @@ return(
 
 <WhatsappButton/>
 <Footer/>
-
+<Admin />
 </BrowserRouter>
 
 </CartProvider>
