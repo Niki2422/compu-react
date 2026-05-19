@@ -1,6 +1,7 @@
 import {
   getAllProducts,
   getProductById,
+  createProduct, // 👈 AGREGAR
 } from "../models/product.model.js";
 
 export const getProducts = async (req, res) => {
@@ -8,9 +9,9 @@ export const getProducts = async (req, res) => {
     const products = await getAllProducts();
     res.json(products);
   } catch (error) {
-  console.log(error); // 👈 CLAVE
-  res.status(500).json({ message: error.message });
-    }
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const getProduct = async (req, res) => {
@@ -23,7 +24,36 @@ export const getProduct = async (req, res) => {
 
     res.json(product);
   } catch (error) {
-  console.log(error); // 👈 CLAVE
-  res.status(500).json({ message: error.message });
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const createNewProduct = async (req, res) => {
+  try {
+    const { name, price, description, stock, category_id } = req.body;
+
+    const image = req.file ? req.file.filename : null;
+
+    if (!name || !price) {
+      return res.status(400).json({ message: "Faltan datos obligatorios" });
     }
+
+    const newProduct = await createProduct({
+      name,
+      price,
+      description,
+      stock,
+      image,
+      category_id,
+    });
+
+    res.status(201).json({
+      message: "Producto creado",
+      product: newProduct,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 };
